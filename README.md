@@ -1,4 +1,7 @@
 # DB_Management_Final
+- Individually developed a C++ program to implement a simplified SQL SELECT statement for retrieving data from a multi-level security (MLS) relational database.
+- Processed SELECT, FROM, WHERE and ORDERBY clauses with supported classification levels with access control based on user clearance.
+- Parsed and executed complex queries with inclusion/exclusion of columns, multiple conditions, and sorting criteria.
 
 # Simplified SELECT Statement Implementation for MLS Relation
 This project involves implementing a simplified SELECT statement to retrieve information from a mulit-level security (MLS) relation. Each row in the MLS relation has an additional attribute named "TC" (classification), which can have one of four values: 4 (Top Secret), 3 (Secret), 2 (Confidential), and 1 (Unclassified).
@@ -31,7 +34,7 @@ Replace `<security_clearance_level>` with an integer (1-4) to indicate the user'
 
 The program will prompt you to enter a SELECT statement. The syntax of the SELECT is shown below. It consists of SELECT, FROM, WHERE, AND ORDERBY clauses, and ends with a semicolon.
 
-`SELECT <columns> FROM <table> WHERE <conditions> ORDERBY <sorting criteria>`
+`SELECT <columns> FROM <table> WHERE <conditions> ORDERBY <sorting criteria>;`
 
 The SELECT and FROM clauses are required. The FROM clause will only take one table. The columns of the SELECT clause could be * (to include all the columns including TC in the table) or a list to either include or exclude one or more columns. To include a column, use &lt;column&gt;:1, and to exclude a column, use &lt;column&gt;:0. The list cannot have both inclusion and exclusion specifications. If the list contains mulitple columns, they are seperated by commas.
 
@@ -54,6 +57,7 @@ The following are some examples of the SELECT statement:
 - SELECT TC:0 FROM EMPLOYEE ORDERBY SUPERSSN:1, SSN:1;
 
 3. Output: 
+
 The program will display the result of the SELECT statement in CSV format, including column names as the first row.
 
 ### Example
